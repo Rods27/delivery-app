@@ -5,26 +5,29 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background-color: $trybeGreen;
+  background-color: $jYellow;
   height: 55px;
   top: 0;
   .left {
     button  {
+      color: $lightBlack;
       position: relative;
-      background: $trybeGreen;
+      background: $jYellow;
       height: 55px;
     }
   }
   .right {
     button {
-      background: $trybeGreen;
+      color: $lightBlack;
+      background: $jYellow;
       height: 55px;
     }
   }
-  #products, #orders, #logoff {
+  #logoff, #username {
     &:hover {
       transition: 0.3s;
-      background-color: $enabledGreen;
+      background-color: $lighterBlack;
+      color: $darkWhite;
       box-shadow: inset 0 -17px 0px -14px #FFFFFF;
     }
   }

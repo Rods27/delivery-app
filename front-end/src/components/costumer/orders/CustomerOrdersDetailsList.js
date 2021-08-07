@@ -13,13 +13,12 @@ class CustomerOrdersDetailsList extends React.Component {
     this.state = {
       OrderDetails: [],
       orders: [],
-      isLoading: true,
-      isDelivered: false,
+      delivered: false,
     };
     this.setAllOrdesInState = this.setAllOrdesInState.bind(this);
+    this.disableButtons = this.disableButtons.bind(this);
   }
 
-  // const OrderDetails ={};
   async componentDidMount() {
     const { history, getAllOrdesByUser } = this.props;
     const orderId = history.location.pathname.split('/')[3];
@@ -40,6 +39,7 @@ class CustomerOrdersDetailsList extends React.Component {
       const selectedOrder = allOrdes.filter((elem) => elem.id === orderId);
       selectedOrder[0].sellerName = sellerName;
       const orderCart = selectedOrder[0].productId;
+      this.disableButtons(actualOrder);
       orderCart.forEach((elem) => {
         elem.quantity = elem.salesProducts.quantity;
       });
@@ -50,9 +50,23 @@ class CustomerOrdersDetailsList extends React.Component {
     }
   }
 
+  disableButtons(order) {
+    if(order) {
+      if(order.status === "Pendente") {
+        this.setState({
+          delivered: true,
+        })
+      } else {
+        this.setState({
+          delivered: false,
+        })
+      }
+    }
+  }
+
   render() {
     const { history } = this.props;
-    const { OrderDetails, isDelivered, orderCart } = this.state;
+    const { OrderDetails, delivered, orderCart } = this.state;
     return (
       <div className="cust-orders_details-container">
         <table className="cust-orders_details-orders-info">
@@ -83,7 +97,7 @@ class CustomerOrdersDetailsList extends React.Component {
             </td>
             <td>
               <button
-                disabled={ !isDelivered }
+                disabled={ !delivered }
                 type="button"
                 data-testid={ `${prefix2}button-delivery-check` }
               >
@@ -130,14 +144,14 @@ class CustomerOrdersDetailsList extends React.Component {
                     id="unitprice-td"
                     data-testid={ `${prefix1}-table-unit-price-${elem.id}` }
                   >
-                    { `R$ ${elem.price}` }
+                    { `R$ ${elem.price.toString().replace('.', ',') }` }
                   </td>
                   <td
                     id="totalprice-td"
                     data-testid={ `${prefix1}-table-sub-total-${elem.id}` }
                   >
                     {`R$ ${(elem.price * elem.quantity)
-                      .toFixed(2)}` }
+                      .toFixed(2).replace('.', ',')}` }
                   </td>
                 </tr>
               ))}

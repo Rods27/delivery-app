@@ -20,13 +20,16 @@ class Header extends React.Component {
     const orders = document.querySelector('#orders');
     if (pathname === ordersRoute) {
       orders.style.boxShadow = 'inset 0 -17px 0px -14px #FFFFFF';
-      orders.style.backgroundColor = '#0f9562';
-      products.style.backgroundColor = '#0fa36b';
+      orders.style.backgroundColor = '#434343';
+      orders.style.color = '#ece8e8';
+      products.style.backgroundColor = '#fbcc04';
       products.style.boxShadow = '0 0 0';
-    } else {
+    } 
+    if (pathname === productsRoute) {
       products.style.boxShadow = 'inset 0 -17px 0px -14px #FFFFFF';
-      products.style.backgroundColor = '#0f9562';
-      orders.style.backgroundColor = '#0fa36b';
+      products.style.backgroundColor = '#434343';
+      products.style.color = '#ece8e8';
+      orders.style.backgroundColor = '#fbcc04';
       orders.style.boxShadow = '0 0 0';
     }
   }
@@ -61,6 +64,7 @@ class Header extends React.Component {
           <button
             type="button"
             data-testid="customer_products__element-navbar-user-full-name"
+            id="username"
             onClick={ () => {
               history.push(productsRoute);
             } }

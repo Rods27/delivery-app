@@ -2,10 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+const admRoute = '/admin/manage';
+const sellerRoute = '/seller/orders';
 class Header extends React.Component {
   constructor() {
     super();
     this.state = {};
+    this.Redirect = this.Redirect.bind(this)
   }
 
   componentDidMount() {
@@ -16,9 +19,19 @@ class Header extends React.Component {
     } = this.props;
     const button = document.querySelector('#admin_seller_button');
     button.style.boxShadow = 'inset 0 -17px 0px -14px #FFFFFF';
-    button.style.backgroundColor = '#0f9562';
+    button.style.backgroundColor = '#434343';
+    button.style.color = '#ece8e8';
     if (pathname === '/admin/manage') {
       button.innerText = 'Gerenciar Usuários';
+    }
+  }
+
+  Redirect(){
+    const { history } = this.props;
+    if (history.location.pathname === '/admin/manage') {
+      return null;
+    } else {
+      history.push('/seller/orders');
     }
   }
 
@@ -37,6 +50,8 @@ class Header extends React.Component {
         <div className="right">
           <button
             type="button"
+            id="username"
+            onClick={ () => this.Redirect() }
             data-testid="customer_products__element-navbar-user-full-name"
           >
             {(dataLogin || JSON.parse(localStorage.getItem('user')))

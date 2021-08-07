@@ -1,6 +1,12 @@
 .cust-orders_details-mastercontainer {
   @include flex(flex, column, flex-start, center );
-  @include loading-div(500px, 500px, $trybeGreen);
+  @include loading-div(500px, 500px, $jYellow);
+  .loading-div > .loader .logo {
+    font-size: 3em;
+  }
+  .loading-div > .loader .title {
+    font-size: 3.5em;
+  }
   .cust-orders_details-container {
     @include flex(flex, row, center, center);
     position: relative;
@@ -9,7 +15,7 @@
     width: 80%;
     max-width: 1300px;
     overflow-y: auto;
-    border-top: 0.1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 rgba(5, 3, 3, 0.2) , 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -19,8 +25,7 @@
       width: 100%;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
-      background-color: $darkWhite;
-      background-color: rgb(221, 220, 220);
+      background-color: $lighterBlack;
       tr {
         display: grid;
         grid-auto-flow: column;
@@ -32,29 +37,36 @@
         td {
           text-align: center;
           font-size: 22px;
+          color: $darkWhite;
           button {
-            background-color: $trybeGreen;
+            background-color: $jYellow;
+            color: $lightBlack;
             font-size: 16px;
             font-weight: 900;
-            color: $darkWhite;
             border: none;
             transition: 0.3s;
             border-radius: 4px;
             height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
             &:hover {
-              transition: 0.3s;
-              background-color: $enabledGreen;
+              transition: 0.1s;
+              background-color: $jYellowSelected;
             }
             &:focus {
               outline: none;
+            }
+            &:disabled {
+              background-color: $lightestBlack;
+              color: grey;
             }
           }
         }
         #cust-orders_details-date {
           @include flex(flex, column, center, center );
-          background-color: white;
+          background-color: $jYellow;
+          color: $lightBlack;
           height: 35px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.5);
           border-radius: 4px;
         }
         #Pendente, #Entregue, #Preparando {
@@ -62,21 +74,10 @@
           font-size: 20px;
           font-weight: 500;
           height: 35px;
-          border: 1px solid rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 4px;
         }
-        #Pendente {
-          background-color: $blue;
-          color: $darkWhite;
-        }
-        #Entregue {
-          background-color: $sucess;
-          color: $darkWhite;
-        }
-        #Preparando {
-          background-color: $libreyellow;
-          color: $darkWhite;
-        }
+        @include statusColor($pending, $delivered, $preparing)
       }
     }
     .cust-orders_details-cart {
@@ -107,10 +108,10 @@
           background-color: rgba(253, 253, 253, 0.863)
         }
         #index-td {
-          background-color: $trybeGreen;
+          background-color: $jYellow;
           border-top-left-radius: 7px;
           border-bottom-left-radius: 7px;
-          color: $darkWhite;
+          color: $lightBlack;
           font-size: 16px;
           font-weight: 500;
         }
@@ -134,10 +135,10 @@
       font-weight: 500;
       margin: 0;
       bottom: 10px;
-      color: $darkWhite;
       padding: 7px 15px;
       border-radius: 3px;
-      background-color: $trybeGreen;
+      color: $lightBlack;
+      background-color: $jYellow;
       border: 1px solid rgba(0, 0, 0, .05);
       box-shadow: 3px 4px 4px 0 rgba(5, 3, 3, 0.2) , 2px 3px 1px 0 rgba(0, 0, 0, 0.2);
     }
@@ -148,8 +149,9 @@
       left: 27px;
       margin: 0;
       &:hover {
-        transition: 0.3s;
-        background-color: $enabledGreen;
+        transition: 0.1s;
+        background-color: $lightBlack;
+        color: $darkWhite;
       }
       &:focus {
         outline: none;

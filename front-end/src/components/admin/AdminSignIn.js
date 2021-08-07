@@ -41,7 +41,7 @@ class AdminSignIn extends React.Component {
       }
     }
     if (name === 'name') {
-      const MIN_LENGTH_NAME = 11;
+      const MIN_LENGTH_NAME = 1;
       if (value.length > MIN_LENGTH_NAME) {
         this.setState({ name: true });
       } else {
@@ -55,11 +55,16 @@ class AdminSignIn extends React.Component {
     const token = JSON.parse(localStorage.getItem('user'));
     const { props } = this;
     const spanMaxTime = 10000;
-    const name = document.getElementById('admin-name').value;
-    const email = document.getElementById('admin-email').value;
-    const password = document.getElementById('admin-password').value;
-    const role = document.getElementById('admin-select').value;
-    const dataForCreate = { name, email, password, role };
+    const name = document.getElementById('admin-name');
+    const email = document.getElementById('admin-email');
+    const password = document.getElementById('admin-password');
+    const role = document.getElementById('admin-select');
+    const dataForCreate = {
+      name: name.value,
+      email: email.value,
+      password: password.value,
+      role: role.value,
+    };
     const newUser = await adminCreate(dataForCreate, token);
     const hiddenSpan = document.querySelector('.hidden-span');
     if (newUser && newUser.statusText) {
@@ -79,6 +84,9 @@ class AdminSignIn extends React.Component {
       localStorage.setItem('allUsers', JSON.stringify(stateUsers));
       dispatchUsers(stateUsers);
       props.newUsers(stateUsers);
+      name.value = '';
+      email.value = '';
+      password.value = '';
     }
   }
 

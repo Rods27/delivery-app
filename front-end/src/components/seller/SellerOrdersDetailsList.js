@@ -13,10 +13,11 @@ class SellerOrdersDetailsList extends React.Component {
       OrderDetails: {},
       orders: [],
       isLoading: true,
-      isRequest: false,
-      isDelivered: false,
+      preparing: false,
+      delivering: false,
     };
     this.setAllOrdesInState = this.setAllOrdesInState.bind(this);
+    this.disableButtons = this.disableButtons.bind(this);
   }
 
   async componentDidMount() {
@@ -41,11 +42,33 @@ class SellerOrdersDetailsList extends React.Component {
       orderCart.forEach((elem) => {
         elem.quantity = elem.salesProducts.quantity;
       });
-      console.log(orderCart);
+      this.disableButtons(actualOrder)
       this.setState((state) => ({ ...state,
         OrderDetails: selectedOrder[0],
-        isLoading: false,
         orderCart }));
+    }
+  }
+
+  disableButtons(order) {
+    if(order) {
+      if(order.status === "Entregue") {
+        this.setState({
+          preparing: false,
+          delivering: false,
+        })
+      }
+      if(order.status === "Preparando") {
+        this.setState({
+          preparing: false,
+          delivering: true,
+        })
+      }
+      if(order.status === "Pendente") {
+        this.setState({
+          preparing: true,
+          delivering: true,
+        })
+      }
     }
   }
 
@@ -55,7 +78,7 @@ class SellerOrdersDetailsList extends React.Component {
 
   render() {
     const { history } = this.props;
-    const { OrderDetails, isDelivered, isRequest, orderCart } = this.state;
+    const { OrderDetails, preparing, delivering, orderCart } = this.state;
     return (
       <div className="seller-orders_details-container">
         <table className="seller-orders_details-orders-info">
@@ -78,7 +101,7 @@ class SellerOrdersDetailsList extends React.Component {
             </td>
             <td>
               <button
-                disabled={ !isRequest }
+                disabled={ !preparing }
                 type="button"
                 data-testid={ `${prefix2}button-preparing-check` }
                 onClick={ () => this.request() }
@@ -88,7 +111,7 @@ class SellerOrdersDetailsList extends React.Component {
             </td>
             <td>
               <button
-                disabled={ !isDelivered }
+                disabled={ !delivering }
                 type="button"
                 data-testid={ `${prefix2}button-dispatch-check` }
                 onClick={ () => this.deliver() }
@@ -135,13 +158,14 @@ class SellerOrdersDetailsList extends React.Component {
                   id="unitprice-td"
                   data-testid={ `${prefix1}-table-unit-price-${product.id}` }
                 >
-                  { `R$ ${product.price}` }
+                  { `R$ ${product.price.replace('.', ',')}` }
                 </td>
                 <td
                   id="totalprice-td"
                   data-testid={ `${prefix1}-table-sub-total-${product.id}` }
                 >
-                  { `R$ ${(product.price * product.quantity).toFixed(2)}` }
+                  { `R$ ${(product.price * product.quantity)
+                    .toFixed(2).replace('.', ',')}` }
                 </td>
               </tr>
             ))}

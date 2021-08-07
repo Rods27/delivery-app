@@ -57,7 +57,7 @@ class AdminUsers extends React.Component {
             </tr>
           </thead>
           <tbody>
-            { filteredUsers && filteredUsers.map((elem) => (
+            { filteredUsers && filteredUsers.map((elem, index) => (
               <tr
                 className="user"
                 key={ `line-${elem.id}` }
@@ -69,7 +69,7 @@ class AdminUsers extends React.Component {
                     `admin_manage__element-user-table-itemNumber-${elem.id}`
                   }
                 >
-                  {elem.id}
+                  {index + 1}
                 </td>
                 <td
                   id="name-td"

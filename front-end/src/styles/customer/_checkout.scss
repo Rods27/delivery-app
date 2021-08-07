@@ -1,8 +1,14 @@
 .checkout-container {
-  margin: 5% auto 0 auto;
+  margin: 3% auto 0 auto;
   height: calc(5% - 100vh);
   @include flex(flex, column, center, center);
-  @include loading-div(500px, 500px, $trybeGreen);
+  @include loading-div(470px, 500px, $jYellow);
+  .loading-div > .loader .logo {
+    font-size: 3em;
+  }
+  .loading-div > .loader .title {
+    font-size: 3.5em;
+  }
   h4 {
     text-align: left;
     width: 1310px;
@@ -15,7 +21,8 @@
     @include flex(flex, column, space-between, center);
     position: relative;
     width: 1300px;
-    height: 540px;
+    min-height: 220px;
+    max-height: 500px;
     border-radius: 3px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 4px 0 rgba(5, 3, 3, 0.2) , 0 2px 1px 0 rgba(0, 0, 0, 0.2);
@@ -42,10 +49,10 @@
           padding: 0;
         }
         button {
-          background-color: $trybeGreen;
+          background-color: $jYellow;
+          color: $lightBlack;
           font-size: 16px;
           font-weight: 900;
-          color: $darkWhite;
           border: none;
           transition: 0.3s;
           width: 100%;
@@ -54,8 +61,9 @@
           border-bottom-right-radius: 7px;
           padding: 0;
           &:hover {
-            transition: 0.3s;
-            background-color: $enabledGreen;
+            transition: 0.1s;
+            color: $darkWhite;
+            background-color: $lighterBlack;
           }
           &:focus {
             outline: none;
@@ -67,10 +75,10 @@
           background-color: rgba(253, 253, 253, 0.863)
         }
         #index-td {
-          background-color: $trybeGreen;
+          background-color: $jYellow;
+          color: $lightBlack;
           border-top-left-radius: 7px;
           border-bottom-left-radius: 7px;
-          color: $darkWhite;
           font-size: 16px;
           font-weight: 500;
         }
@@ -89,11 +97,11 @@
       @include flex(flex, column, flex-end, flex-end);
       width: 1300px;
       span {
-        background-color: $trybeGreen;
+        background-color: $jYellow;
+        color: $lightBlack;
         padding: 15px;
         font-size: 28px;
         font-weight: 500;
-        color: $darkWhite;
         margin: 0 20px 15px 0;
         border-radius: 4px;
         border: 1px solid rgba(0, 0, 0, .05);
@@ -118,37 +126,26 @@
         }
         @include flex(flex, column, center, flex-start);
         input, select {
-          border: 0.13rem solid rgba(0, 0, 0, 0.75);
+          border: 2px solid rgba(0, 0, 0, 0.75);
           width: 380px;
-          height: 35px;
           padding-left: 12px;
           font-size: 16px;
-          color: $trybeGreen;
+          color: $lightBlack;
           border-radius: 5px;
           font-weight: 900;
-        }
-        input {
-          transition: 0.3s;
           &:focus {
             outline: none;
-            border-color: $enabledGreen;
-            box-shadow: 0 0px 9px $darkWhite;
+            border: 2px solid $jYellow;
+            box-shadow: 0 0px 1.5px $lightBlack;
           }
-          &:hover {
-            box-shadow: 0 0px 7px $darkWhite;
-          }
+        }
+        input {
+          transition: 0.1s;
+          height: 35px;
         }
         select {
           background-color: white;
-          height: 42px;
-          &:focus {
-            outline: none;
-            border-color: $enabledGreen;
-            box-shadow: 0 0px 9px $darkWhite;
-          }
-          &:hover {
-            box-shadow: 0 0px 7px $darkWhite;
-          }
+          height: 40px;
         }
         // remove spin arrow input
         input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
@@ -161,11 +158,11 @@
       }
     }
     button {
-      background-color: $trybeGreen;
+      background-color: $jYellow;
+      color: $lightBlack;
+      border: 0.1px solid rgba(0, 0, 0, 0.2);
       font-size: 16px;
       font-weight: 900;
-      color: $darkWhite;
-      border: none;
       transition: 0.3s;
       width: 300px;
       height: 55px;
@@ -173,8 +170,9 @@
       padding: 0;
       margin-bottom: 20px;
       &:hover {
-        transition: 0,3s;
-        background-color: $enabledGreen;
+        transition: 0.1s;
+        color: $darkWhite;
+        background-color: $lighterBlack;
       }
       &:focus {
         outline: none;

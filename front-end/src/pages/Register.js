@@ -6,7 +6,7 @@ import { Loader } from '../components';
 import { createUser, login } from '../services';
 import { loginAction } from '../redux/actions';
 
-const SECOND_HALF = 10;
+const SECOND_HALF = 1000;
 const MAX_TIME_SPAM_TEN_SECONDS = 10000;
 const MIN_LENGTH_NAME = 13;
 const MIN_LENGTH_PASSWORD = 6;
@@ -18,6 +18,7 @@ class Register extends React.Component {
       email: false,
       password: false,
       name: false,
+      loading: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.signIn = this.signIn.bind(this);

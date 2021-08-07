@@ -1,6 +1,12 @@
 .cust-orders-mastercontainer {
   @include flex(flex, column, flex-start, center );
-  @include loading-div(500px, 500px, $trybeGreen);
+  @include loading-div(500px, 500px, $jYellow);
+  .loading-div > .loader .logo {
+    font-size: 3em;
+  }
+  .loading-div > .loader .title {
+    font-size: 3.5em;
+  }
   .customer-orders-container {
     @include flex(flex, row, flex-start, center);
     position: relative;
@@ -14,8 +20,11 @@
       padding: 0;
       margin: 0 10px;
       &:hover > .order-card > .order-left > button {
-        transition: all 0.3s;
-        background-color: $enabledGreen;
+        transition: all 0.15s;
+        background-color: $lighterBlack;
+      }
+      &:hover > .order-card > .order-left > button > span {
+        color: $darkWhite;
       }
       &:hover > .order-card {
         transition: all 0.1s;
@@ -45,14 +54,13 @@
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
           border: none;
-          background-color: $trybeGreen;
+          background-color: $jYellow;
           &:hover {
             transition: .3s;
             background-color: $enabledGreen;
           }
           span {
-            font-weight: 500;
-            color: $darkWhite;
+            color: $lightBlack;
             font-size: 20px;
             padding-top: 5px;
             font-weight: 500;
@@ -71,7 +79,7 @@
           text-align: center;
           margin-right: 15px;
           font-size: 16px;
-          background-color: $trybeGreen;
+          background-color: $lighterBlack;
           padding: 6px;
           border-radius: 4px;
           color: $darkWhite;
@@ -86,16 +94,7 @@
           border: 1px solid rgba(0, 0, 0, 0.3);
           border-radius: 4px;
         }
-        #Pendente {
-          background-color: $blue;
-          color: $darkWhite;
-        }
-        #Entregue {
-          background-color: $sucess;
-        }
-        #Preparando {
-          background-color: $libreyellow;
-        }
+        @include statusColor($pending, $delivered, $preparing)
       }
     }
   }

@@ -10,11 +10,11 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $trybeGreen;
+  background: $lightBlack;
   
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $enabledGreen;
+  background: $lightestBlack;
 }

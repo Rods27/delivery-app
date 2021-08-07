@@ -1,7 +1,13 @@
 .admin-container {
   margin: 5% auto 0 auto;
   @include flex(flex, column, center, center);
-  @include loading-div(500px, 520px, $trybeGreen);
+  @include loading-div(470px, 500px, $jYellow);
+  .loading-div > .loader .logo {
+    font-size: 3em;
+  }
+  .loading-div > .loader .title {
+    font-size: 3.5em;
+  }
   h4 {
     text-align: left;
     width: 1310px;
@@ -22,21 +28,23 @@
       @include flex(flex, column, center, flex-start);
       margin-bottom: 15px;
       input, select {
-        border: 0.13rem solid rgba(0, 0, 0, 0.75);
+        border: 2px solid rgba(0, 0, 0, 0.75);
         width: 250px;
         height: 35px;
         padding-left: 12px;
         font-size: 16px;
-        color: $trybeGreen;
+        color: $lightBlack;
         border-radius: 5px;
         font-weight: 900;
+        margin-top: 7px;
       }
       input {
         transition: 0.3s;
         &:focus {
           outline: none;
-          border-color: $enabledGreen;
-          box-shadow: 0 0px 9px $darkWhite;
+          border: 2px solid $jYellow;
+          box-shadow: 0 0px 1.5px $lightBlack;
+          box-shadow: 0 0px 7px $darkWhite;
         }
         &:hover {
           box-shadow: 0 0px 7px $darkWhite;
@@ -47,8 +55,9 @@
         height: 42px;
         &:focus {
           outline: none;
-          border-color: $enabledGreen;
-          box-shadow: 0 0px 9px $darkWhite;
+          border: 2px solid $jYellow;
+          box-shadow: 0 0px 1.5px $lightBlack;
+          box-shadow: 0 0px 7px $darkWhite;
         }
         &:hover {
           box-shadow: 0 0px 7px $darkWhite;
@@ -66,24 +75,25 @@
       color: crimson;
     }
     button {
-      background-color: $darkWhite;
+      background-color: $jYellow;
+      color: $lightBlack;
       width: 150px;
       height: 45px;
       font-size: 20px;
       font-weight: 900;
       border-radius: 7px;
-      border: none;
-      transition: 0.3s;
-      color: $darkWhite;
-      background-color: $trybeGreen;
+      border: 0.1px solid rgba(0, 0, 0, 0.2);
+      transition: 0.1s;
       margin-bottom: 15px;
       &:disabled {
-        background-color: $disabledGreen;
+        background-color: $lightestBlack;
         box-shadow: 0 0px 0px;
+        color: grey;
       }
-      &:hover {
+      &:hover:enabled {
         transition: 0.3s;
-        background-color: $enabledGreen;
+        background-color: $lightBlack;
+        color: $darkWhite;
       }
       &:focus {
         outline: none;
@@ -93,12 +103,12 @@
   .admin-table {
     @include flex(flex, row, center, flex-start);
     width: 1300px;
-    height: 600px;
     padding-top: 10px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 1px 1px 4px 1px rgba(5, 3, 3, 0.2) , 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     border-radius: 3px;
+    margin-bottom: 40px;
     table {
       border-collapse: separate;
       border-spacing: 0 15px;
@@ -120,20 +130,21 @@
             padding: 0;
           }
           button {
-            background-color: $trybeGreen;
+            background-color: $jYellow;
+            color: $lightBlack;
             font-size: 16px;
             font-weight: 900;
             border: none;
             transition: 0.3s;
-            color: $darkWhite;
             width: 100%;
             height: 50px;
             border-top-right-radius: 7px;
             border-bottom-right-radius: 7px;
             padding: 0;
             &:hover {
-              transition: 0.3s;
-              background-color: $enabledGreen;
+              transition: 0.1s;
+              background-color: $lightBlack;
+              color: $darkWhite;
             }
             &:focus {
               outline: none;
@@ -144,10 +155,10 @@
             font-weight: 500;
           }
           #index-td {
-            background-color: $trybeGreen;
+            background-color: $jYellow;
+            color: $lightBlack;
             border-top-left-radius: 7px;
             border-bottom-left-radius: 7px;
-            color: $darkWhite;
             font-size: 16px;
             font-weight: 500;
           }

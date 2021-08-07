@@ -21,3 +21,19 @@
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin statusColor($pendente, $preparando, $entregue) {
+  #Pendente {
+    background-color: $pendente;
+    color: $darkWhite;
+  }
+  #Entregue {
+    background-color: $preparando;
+    color: $darkWhite;
+  }
+  #Preparando {
+    background-color: $entregue;
+    color: $darkWhite;
+  }
+}
+
