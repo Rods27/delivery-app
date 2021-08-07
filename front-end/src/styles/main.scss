@@ -1,0 +1,46 @@
+@import './utilities/variables';
+
+@import './utilities//mixins';
+
+@import './overflow';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: $darkWhite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@import './home';
+
+@import './TrybeLoader.scss';
+
+@import './login.scss';
+
+@import './customer/register.scss';
+
+@import './header.scss';
+
+@import './customer/products.scss';
+
+@import './customer/cart.scss';
+
+@import './customer/checkout.scss';
+
+@import './admin.scss';
+
+@import './seller/seller_orders.scss';
+
+@import './customer/cust_orders.scss';
+
+@import './customer/cust_orders_details';
+
+@import './seller/seller_orders_details';

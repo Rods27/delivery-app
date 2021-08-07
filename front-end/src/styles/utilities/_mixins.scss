@@ -1,0 +1,23 @@
+@mixin loading-div($wid, $hei, $bcolor) {
+  .loading-div {
+    position: absolute;
+    background-color: $bcolor;
+    width: $wid;
+    height: $hei;
+    top: calc(50vh - 250px);
+    border: 2px rgba(0, 0, 0, 0.3)solid;
+    padding-top: 15px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin flex($flex, $flexDir, $justify, $align ) {
+  display: $flex;
+  flex-direction: $flexDir;
+  justify-content: $justify;
+  align-items: $align;
+}
