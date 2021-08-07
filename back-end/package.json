@@ -4,13 +4,15 @@
   "description": "Back-end do projeto App de Delivery",
   "main": "./src/api/server.js",
   "engines": {
-    "node": ">=14.0.0"
+    "node": "14.x",
+    "npm": "6.x"
   },
   "engineStrict": true,
   "private": true,
   "scripts": {
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
-    "start": "node .",
+    "start": "node src/api/server.js",
+    "build": "webpack",
     "dev": "nodemon .",
     "test": "mocha src/tests/**/*$NAME*.test.js --exit",
     "test:coverage": "nyc --all npm run test",
