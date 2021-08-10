@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getAllOrdesBySellerApi } from '../../redux/actions';
+import { getAllOrdersBySellerApi } from '../../redux/actions';
 
 const prefix1 = 'seller_order_details__element-order';
 const prefix2 = 'seller_order_details__';
@@ -16,28 +16,28 @@ class SellerOrdersDetailsList extends React.Component {
       preparing: false,
       delivering: false,
     };
-    this.setAllOrdesInState = this.setAllOrdesInState.bind(this);
+    this.setAllOrdersInState = this.setAllOrdersInState.bind(this);
     this.disableButtons = this.disableButtons.bind(this);
   }
 
   async componentDidMount() {
     const NOT_MAGIC = -1;
-    const { history, getAllOrdesByUser } = this.props;
+    const { history, getAllOrdersByUser } = this.props;
     const orderId = Number(history.location.pathname.slice(NOT_MAGIC));
-    await getAllOrdesByUser();
-    this.setAllOrdesInState(orderId);
+    await getAllOrdersByUser();
+    this.setAllOrdersInState(orderId);
   }
 
-  async setAllOrdesInState(orderId) {
-    const { allOrdes } = this.props;
-    const actualOrder = allOrdes.find((o) => o.id === orderId);
+  async setAllOrdersInState(orderId) {
+    const { allOrders } = this.props;
+    const actualOrder = allOrders.find((o) => o.id === orderId);
     if (actualOrder) {
-      allOrdes.forEach((elem) => {
+      allOrders.forEach((elem) => {
         const dateArray = elem.sale_date.split('T')[0].split('-');
         const date = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
         elem.sale_date = date;
       });
-      const selectedOrder = allOrdes.filter((elem) => elem.id === orderId);
+      const selectedOrder = allOrders.filter((elem) => elem.id === orderId);
       const orderCart = selectedOrder[0].productId;
       orderCart.forEach((elem) => {
         elem.quantity = elem.salesProducts.quantity;
@@ -191,30 +191,17 @@ class SellerOrdersDetailsList extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  // dispatchProducts: (array) => dispatch(productsAction(array)),
-  // dispatchCart: (array) => dispatch(cartAction(array)),
-  getAllOrdesByUser: () => dispatch(getAllOrdesBySellerApi()),
-  // setAllUserStore: () => dispatch(getAllUsersApi()),
+  getAllOrdersByUser: () => dispatch(getAllOrdersBySellerApi()),
 });
 
 const mapStateToProps = (state) => ({
-  allOrdes: state.ordesReducer.allOrdes,
+  allOrders: state.ordersReducer.allOrders,
 });
-
-// const mapStateToProps = (state) => ({
-//   stateProducts: state.products.products,
-//   stateCart: state.products.cart,
-// });
 
 SellerOrdersDetailsList.propTypes = {
   history: PropTypes.shape().isRequired,
-  getAllOrdesByUser: PropTypes.func.isRequired,
-  allOrdes: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   dispatchProducts: PropTypes.func.isRequired,
-//   dispatchCart: PropTypes.func.isRequired,
-//   stateProducts: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   stateCart: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getAllOrdersByUser: PropTypes.func.isRequired,
+  allOrders: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SellerOrdersDetailsList);
-// export default SellerOrdersDetailsList;

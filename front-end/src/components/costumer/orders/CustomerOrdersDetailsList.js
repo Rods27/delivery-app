@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getNameUserById } from '../../../services';
-import { getAllOrdesByUserApi } from '../../../redux/actions';
+import { getAllOrdersByUserApi } from '../../../redux/actions';
 
 const prefix1 = 'customer_order_details__element-order';
 const prefix2 = 'customer_order_details__';
@@ -15,28 +15,28 @@ class CustomerOrdersDetailsList extends React.Component {
       orders: [],
       delivered: false,
     };
-    this.setAllOrdesInState = this.setAllOrdesInState.bind(this);
+    this.setAllOrdersInState = this.setAllOrdersInState.bind(this);
     this.disableButtons = this.disableButtons.bind(this);
   }
 
   async componentDidMount() {
-    const { history, getAllOrdesByUser } = this.props;
+    const { history, getAllOrdersByUser } = this.props;
     const orderId = history.location.pathname.split('/')[3];
-    await getAllOrdesByUser();
-    this.setAllOrdesInState(Number(orderId));
+    await getAllOrdersByUser();
+    this.setAllOrdersInState(Number(orderId));
   }
 
-  async setAllOrdesInState(orderId) {
-    const { allOrdes } = this.props;
-    const actualOrder = allOrdes.find((o) => o.id === orderId);
+  async setAllOrdersInState(orderId) {
+    const { allOrders } = this.props;
+    const actualOrder = allOrders.find((o) => o.id === orderId);
     if (actualOrder) {
       const sellerName = await getNameUserById(actualOrder.seller_id);
-      allOrdes.forEach((elem) => {
+      allOrders.forEach((elem) => {
         const dateArray = elem.sale_date.split('T')[0].split('-');
         const date = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
         elem.sale_date = date;
       });
-      const selectedOrder = allOrdes.filter((elem) => elem.id === orderId);
+      const selectedOrder = allOrders.filter((elem) => elem.id === orderId);
       selectedOrder[0].sellerName = sellerName;
       const orderCart = selectedOrder[0].productId;
       this.disableButtons(actualOrder);
@@ -177,17 +177,17 @@ class CustomerOrdersDetailsList extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllOrdesByUser: () => dispatch(getAllOrdesByUserApi()),
+  getAllOrdersByUser: () => dispatch(getAllOrdersByUserApi()),
 });
 
 const mapStateToProps = (state) => ({
-  allOrdes: state.ordesReducer.allOrdes,
+  allOrders: state.ordersReducer.allOrders,
 });
 
 CustomerOrdersDetailsList.propTypes = {
   history: PropTypes.shape().isRequired,
-  getAllOrdesByUser: PropTypes.func.isRequired,
-  allOrdes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getAllOrdersByUser: PropTypes.func.isRequired,
+  allOrders: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CustomerOrdersDetailsList);

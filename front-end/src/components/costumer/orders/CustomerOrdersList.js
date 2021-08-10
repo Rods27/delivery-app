@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from '../../Loader';
-import { getAllOrdesByUserApi } from '../../../redux/actions';
+import { getAllOrdersByUserApi } from '../../../redux/actions';
 
 const testId = 'customer_orders__';
 
@@ -13,24 +13,24 @@ class CustomerOrdersList extends React.Component {
       orders: [],
       isLoading: true,
     };
-    this.setAllOrdesInState = this.setAllOrdesInState.bind(this);
+    this.setAllOrdersInState = this.setAllOrdersInState.bind(this);
   }
 
   async componentDidMount() {
-    const { getAllOrdesByUser } = this.props;
-    await getAllOrdesByUser();
-    this.setAllOrdesInState();
+    const { getAllOrdersByUser } = this.props;
+    await getAllOrdersByUser();
+    this.setAllOrdersInState();
   }
 
-  setAllOrdesInState() {
-    const { allOrdes } = this.props;
-    if (allOrdes) {
-      allOrdes.forEach((elem) => {
+  setAllOrdersInState() {
+    const { allOrders } = this.props;
+    if (allOrders) {
+      allOrders.forEach((elem) => {
         const date = elem.sale_date.split('T')[0].split('-');
         elem.sale_date = `${date[2]}/${date[1]}/${date[0]}`;
       });
       this.setState((state) => ({ ...state,
-        orders: allOrdes,
+        orders: allOrders,
         isLoading: false }));
     }
   }
@@ -97,17 +97,17 @@ class CustomerOrdersList extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllOrdesByUser: () => dispatch(getAllOrdesByUserApi()),
+  getAllOrdersByUser: () => dispatch(getAllOrdersByUserApi()),
 });
 
 const mapStateToProps = (state) => ({
-  allOrdes: state.ordesReducer.allOrdes,
+  allOrders: state.ordersReducer.allOrders,
 });
 
 CustomerOrdersList.propTypes = {
   history: PropTypes.shape().isRequired,
-  getAllOrdesByUser: PropTypes.func.isRequired,
-  allOrdes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getAllOrdersByUser: PropTypes.func.isRequired,
+  allOrders: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CustomerOrdersList);

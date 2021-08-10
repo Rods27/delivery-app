@@ -5,8 +5,8 @@ export const CART = 'CART';
 export const DATA_LOGIN = 'LOGIN_LOGIN';
 export const ALL_USER = 'ALL_USER';
 export const USER = 'USER';
-export const ORDES = 'ORDES';
-export const ALL_ORDES = 'ALL_ORDES';
+export const ORDERS = 'ORDERS';
+export const ALL_ORDERS = 'ALL_ORDERS';
 // export const PROCESS = 'PROCESS';
 
 export const productsAction = (array) => ({
@@ -44,28 +44,17 @@ export const getAllUsersApi = () => async (dispatch) => {
   dispatch(allUserAction(registers));
 };
 
-const allOrdesAction = (allOrdes) => ({
-  type: ALL_ORDES,
-  payload: allOrdes,
+const allOrdersAction = (allOrders) => ({
+  type: ALL_ORDERS,
+  payload: allOrders,
 });
 
-export const getAllOrdesByUserApi = () => async (dispatch) => {
-  // const result = await getAllOrdersForUser();
-  // console.log(result);
+export const getAllOrdersByUserApi = () => async (dispatch) => {
   const { orders } = await getAllOrdersForUser();
-  dispatch(allOrdesAction(orders));
+  dispatch(allOrdersAction(orders));
 };
 
-export const getAllOrdesBySellerApi = () => async (dispatch) => {
+export const getAllOrdersBySellerApi = () => async (dispatch) => {
   const { orders } = await getAllOrdersForSeller();
-  dispatch(allOrdesAction(orders));
+  dispatch(allOrdersAction(orders));
 };
-
-// export const process = (encrypt, text, cypher) => ({
-//   type: PROCESS,
-//   payload: {
-//     encrypt,
-//     text,
-//     cypher,
-//   },
-// });

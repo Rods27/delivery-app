@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from '../Loader';
-import { getAllOrdesBySellerApi } from '../../redux/actions';
+import { getAllOrdersBySellerApi } from '../../redux/actions';
 
 const testId = 'seller_orders__element';
 
@@ -14,25 +14,25 @@ class SellerOrderList extends React.Component {
       orders: [],
       isLoading: true,
     };
-    this.setAllOrdesInState = this.setAllOrdesInState.bind(this);
+    this.setAllOrdersInState = this.setAllOrdersInState.bind(this);
   }
 
   async componentDidMount() {
-    const { getAllOrdesByUser } = this.props;
-    await getAllOrdesByUser();
-    this.setAllOrdesInState();
+    const { getAllOrdersByUser } = this.props;
+    await getAllOrdersByUser();
+    this.setAllOrdersInState();
   }
 
-  async setAllOrdesInState() {
-    const { allOrdes } = this.props;
-    if (allOrdes) {
-      allOrdes.forEach((ordes) => {
+  async setAllOrdersInState() {
+    const { allOrders } = this.props;
+    if (allOrders) {
+      allOrders.forEach((ordes) => {
         const dateArray = ordes.sale_date.split('T')[0].split('-');
         ordes.date = `${dateArray[2]}/${dateArray[1]}/${dateArray[0]}`;
       });
 
       this.setState((state) => ({ ...state,
-        orders: allOrdes,
+        orders: allOrders,
         isLoading: false }));
     }
   }
@@ -95,16 +95,16 @@ class SellerOrderList extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  getAllOrdesByUser: () => dispatch(getAllOrdesBySellerApi()),
+  getAllOrdersByUser: () => dispatch(getAllOrdersBySellerApi()),
 });
 
 const mapStateToProps = (state) => ({
-  allOrdes: state.ordesReducer.allOrdes,
+  allOrders: state.ordersReducer.allOrders,
 });
 
 SellerOrderList.propTypes = {
   history: PropTypes.shape().isRequired,
-  getAllOrdesByUser: PropTypes.func.isRequired,
-  allOrdes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getAllOrdersByUser: PropTypes.func.isRequired,
+  allOrders: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SellerOrderList);
