@@ -1,13 +1,12 @@
 
-# Recipes App
+# Delivery App
 
 Uma aplicação que simula um site de compra de bebidas, o usuário pode se cadastrar, escolher as bebidas da tela de produtos, escolher seu endereço na tela de checkout, checar suas ordens na tela de ordens, marcar seu pedido caso seja entregue.
 Como vendedor pode checar suas ordens, marcar o pedido como "preparando" e como "saiu para entrega".
 Como administrador, pode cadastrar ou deletar usuários.
 
 ## Indice
-* [Deploy](#Deploy)
-* [Screenshots](#screenshots)
+* [Deploy](#deploy)
 * [Tecnologias](#tecnologias)
 * [Observações](#observações)
 * [Instalação](#instalação)
@@ -17,21 +16,21 @@ Como administrador, pode cadastrar ou deletar usuários.
 * [Rotas](#rotas)
 * [FeedBack](#feedback)
 
-<img align="center" src="front-end/public/img/login.jpg" width="400" />
+<img align="left" src="front-end/public/img/login.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/register.jpg" width="400" />
+<img align="center" src="front-end/public/img/register.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/products.jpg" width="400" />
+<img align="left" src="front-end/public/img/products.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/checkout.jpg" width="400" />
+<img align="center" src="front-end/public/img/checkout.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/user-order.jpg" width="400" />
+<img align="left" src="front-end/public/img/user-order.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="400" />
+<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/user-order.jpg" width="400" />
+<img align="left" src="front-end/public/img/user-order.jpg" width="450" />
 
-<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="400" />
+<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="450" />
 
 ## Deploy
 Deploy ainda sendo inplementado.(#deploy)
