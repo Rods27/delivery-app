@@ -76,6 +76,13 @@ Na ordem:
 
 ## Funcionalidades
 
+<object type="application/x-shockwave-flash" 
+  data="front-end/public/video/app.mp4" 
+  width="500" height="500">
+  <param name="movie" value="front-end/public/video/app.mp4" />
+  <param name="quality" value="high"/>
+</object>
+
 ### Front-End
 <ul>
   <li>Login
