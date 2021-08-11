@@ -17,6 +17,8 @@ Como administrador, pode cadastrar ou deletar usuários.
 * [Rotas](#rotas)
 * [FeedBack](#feedback)
 
+## Screenshots
+
 <img align="center" src="front-end/public/img/login.jpg" width="400" />
 
 <img align="center" src="front-end/public/img/register.jpg" width="400" />
