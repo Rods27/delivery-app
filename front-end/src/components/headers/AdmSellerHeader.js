@@ -8,7 +8,7 @@ class Header extends React.Component {
   constructor() {
     super();
     this.state = {};
-    this.Redirect = this.Redirect.bind(this)
+    this.Redirect = this.Redirect.bind(this);
   }
 
   componentDidMount() {
@@ -26,12 +26,12 @@ class Header extends React.Component {
     }
   }
 
-  Redirect(){
+  Redirect() {
     const { history } = this.props;
-    if (history.location.pathname === '/admin/manage') {
-      return null;
+    if (history.location.pathname === admRoute) {
+      history.push(admRoute);
     } else {
-      history.push('/seller/orders');
+      history.push(sellerRoute);
     }
   }
 

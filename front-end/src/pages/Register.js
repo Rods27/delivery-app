@@ -14,7 +14,6 @@ class Register extends React.Component {
   constructor() {
     super();
     this.state = {
-      loading: false,
       email: false,
       password: false,
       name: false,

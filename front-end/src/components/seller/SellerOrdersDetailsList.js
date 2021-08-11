@@ -42,7 +42,7 @@ class SellerOrdersDetailsList extends React.Component {
       orderCart.forEach((elem) => {
         elem.quantity = elem.salesProducts.quantity;
       });
-      this.disableButtons(actualOrder)
+      this.disableButtons(actualOrder);
       this.setState((state) => ({ ...state,
         OrderDetails: selectedOrder[0],
         orderCart }));
@@ -50,24 +50,24 @@ class SellerOrdersDetailsList extends React.Component {
   }
 
   disableButtons(order) {
-    if(order) {
-      if(order.status === "Entregue") {
+    if (order) {
+      if (order.status === 'Entregue') {
         this.setState({
           preparing: false,
           delivering: false,
-        })
+        });
       }
-      if(order.status === "Preparando") {
+      if (order.status === 'Preparando') {
         this.setState({
           preparing: false,
           delivering: true,
-        })
+        });
       }
-      if(order.status === "Pendente") {
+      if (order.status === 'Pendente') {
         this.setState({
           preparing: true,
           delivering: true,
-        })
+        });
       }
     }
   }

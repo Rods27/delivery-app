@@ -24,7 +24,7 @@ class Header extends React.Component {
       orders.style.color = '#ece8e8';
       products.style.backgroundColor = '#fbcc04';
       products.style.boxShadow = '0 0 0';
-    } 
+    }
     if (pathname === productsRoute) {
       products.style.boxShadow = 'inset 0 -17px 0px -14px #FFFFFF';
       products.style.backgroundColor = '#434343';

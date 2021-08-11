@@ -51,15 +51,15 @@ class CustomerOrdersDetailsList extends React.Component {
   }
 
   disableButtons(order) {
-    if(order) {
-      if(order.status === "Pendente") {
+    if (order) {
+      if (order.status === 'Pendente') {
         this.setState({
           delivered: true,
-        })
+        });
       } else {
         this.setState({
           delivered: false,
-        })
+        });
       }
     }
   }
@@ -144,7 +144,7 @@ class CustomerOrdersDetailsList extends React.Component {
                     id="unitprice-td"
                     data-testid={ `${prefix1}-table-unit-price-${elem.id}` }
                   >
-                    { `R$ ${elem.price.toString().replace('.', ',') }` }
+                    { `R$ ${elem.price.toString().replace('.', ',')}` }
                   </td>
                   <td
                     id="totalprice-td"
