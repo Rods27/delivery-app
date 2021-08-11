@@ -64,7 +64,7 @@ Faça o comando tanto na pasta raiz, quanto nas pastas **back-end** e **front-en
 #### Criando o Database
 - Para criar e popular o database, pode usar o seguinte comando dentro da pasta **back-end**:
 ```
-"npm run db:reset"
+npm run db:reset
 ```
 
 ## Iniciando
@@ -186,8 +186,9 @@ Na ordem:
   #### Login
   #### Register
   #### Products
+  GET:
     ```
-    GET: "http://localhost:3001/products/"
+    "http://localhost:3001/products/"
     ```
   - Esta rota retorna as url das imagens na pasta **back-end/public**.
   #### Order   
