@@ -184,13 +184,18 @@ Na ordem:
   ### Rotas
   O arquivo com todas as rotas se encontra na pasta ``src/api/routes.js``.
   #### Login
+  POST:
+  ```
+  http://localhost:3001/products/
+  ```
+  - Esta rota retorna o token contendo o nome, email, e token.
   #### Register
   #### Products
   GET:
-    ```
-    http://localhost:3001/products/
-    ```
-  - Esta rota retorna as url das imagens na pasta **back-end/public**.
+  ```
+  http://localhost:3001/products/
+  ```
+  - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
   #### Order   
   
 ## Feedback 
