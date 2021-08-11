@@ -35,10 +35,10 @@ Como administrador, pode cadastrar ou deletar usuários.
 <img align="center" src="front-end/public/img/user-orderdetail.jpg" width="400" />
 
 ## Deploy
-Deploy ainda sendo inplementado.(#deploy)
+Deploy ainda sendo inplementado.
 
 ## Tecnologias
-<ul id='tecnologias'>
+<ul>
   <li><a href="https://reactjs.org">React</a></li>
   <li><a href="https://www.mysql.com/">MySQL</a></li>
   <li><a href="https://nodejs.org/en/">Node.js</a></li>
