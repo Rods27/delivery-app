@@ -1,13 +1,12 @@
 
-# Recipes App
+# Delivery App
 
 Uma aplicação que simula um site de compra de bebidas, o usuário pode se cadastrar, escolher as bebidas da tela de produtos, escolher seu endereço na tela de checkout, checar suas ordens na tela de ordens, marcar seu pedido caso seja entregue.
 Como vendedor pode checar suas ordens, marcar o pedido como "preparando" e como "saiu para entrega".
 Como administrador, pode cadastrar ou deletar usuários.
 
 ## Indice
-* [Deploy](#Deploy)
-* [Screenshots](#screenshots)
+* [Deploy](#deploy)
 * [Tecnologias](#tecnologias)
 * [Observações](#observações)
 * [Instalação](#instalação)
@@ -19,19 +18,19 @@ Como administrador, pode cadastrar ou deletar usuários.
 
 ## Screenshots
 
-<img align="center" src="front-end/public/img/login.jpg" width="400" />
+<img align="left" src="front-end/public/img/login.jpg" width="400" />
 
 <img align="center" src="front-end/public/img/register.jpg" width="400" />
 
-<img align="center" src="front-end/public/img/products.jpg" width="400" />
+<img align="left" src="front-end/public/img/products.jpg" width="400" />
 
 <img align="center" src="front-end/public/img/checkout.jpg" width="400" />
 
-<img align="center" src="front-end/public/img/user-order.jpg" width="400" />
+<img align="left" src="front-end/public/img/user-order.jpg" width="400" />
 
 <img align="center" src="front-end/public/img/user-orderdetail.jpg" width="400" />
 
-<img align="center" src="front-end/public/img/user-order.jpg" width="400" />
+<img align="left" src="front-end/public/img/user-order.jpg" width="400" />
 
 <img align="center" src="front-end/public/img/user-orderdetail.jpg" width="400" />
 
@@ -84,7 +83,8 @@ Na ordem:
       <li>Caso encontre as informações no back-end, o usuário é direcionado a tela de produtos.</li>
       <li>Pode clicar no botão "Ainda não tenho conta", para ir para tela de registros.</li>
       <li>Caso haja algum erro pelo back-end, o erro é exibido abaixo do input senha.</li>
-      <ul>O botão de login será desabilitado se:
+      O botão de login será desabilitado se:
+      <ul>
         <li>Email não estiver no formato de email.</li>
         <li>Senha maior for menor que 6 caracteres.</li>
       </ul>
@@ -96,7 +96,8 @@ Na ordem:
     <ul>
       <li>Faz registro de usuários novos, se a criação for bem sucedida, será direcionado para a tela de produtos.</li>
       <li>Caso haja algum erro pelo back-end, o erro é exibido abaixo do input senha.</li>
-      <ul>O botão cadastro será desabilitado se:
+      O botão cadastro será desabilitado se:
+      <ul>
         <li>O nome for menor que 12 caracteres.</li>
         <li>Email não estiver no formato de email.</li>
         <li>Senha maior for menor que 6</li>
@@ -109,7 +110,7 @@ Na ordem:
       <li>Mostra todas as bebidas disponíveis</li>  
       <li>Podem ser selecionados um por um, ou adicionados em quantidades específicas pelo input do card.</li> 
       <li>São recomendados comidas ser o usuário está na tela de bebidas, vice-versa.</li>
-      Esta tela tem um header espefícico, onde se encontram quatro botões.
+      <li>Esta tela tem um header espefícico, onde se encontram quatro botões.</li>
       <ul>
         <li>Produtos: te direciona para a tela de produtos.</li>
         <li>Meus Pedidos: te direciona para a tela de pedidos.</li>
@@ -169,7 +170,8 @@ Na ordem:
       <li>Pode se cadastrar qualquer tipo de usuário nesta tela.</li>
       <li>Caso o email desejado esteja cadastrado, aparecerá um erro abaixo dos inputs.</li>
       <li>O admin poderá excluir qualquer usuário.</li>
-      <ul>O botão cadastro será desabilitado se:
+      O botão cadastro será desabilitado se:
+      <ul>
         <li>O nome for menor que 1 caracter.</li>
         <li>Email não estiver no formato de email.</li>
         <li>Senha maior for menor que 6</li>
