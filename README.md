@@ -38,7 +38,7 @@ Como administrador, pode cadastrar ou deletar usuários.
 Deploy ainda sendo inplementado.(#deploy)
 
 ## Tecnologias
-<ul>
+<ul id='tecnologias'>
   <li><a href="https://reactjs.org">React</a></li>
   <li><a href="https://www.mysql.com/">MySQL</a></li>
   <li><a href="https://nodejs.org/en/">Node.js</a></li>
