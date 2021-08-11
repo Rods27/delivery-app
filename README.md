@@ -16,21 +16,23 @@ Como administrador, pode cadastrar ou deletar usuários.
 * [Rotas](#rotas)
 * [FeedBack](#feedback)
 
-<img align="left" src="front-end/public/img/login.jpg" width="450" />
+## Screenshots
 
-<img align="center" src="front-end/public/img/register.jpg" width="450" />
+<img align="left" src="front-end/public/img/login.jpg" width="470" />
 
-<img align="left" src="front-end/public/img/products.jpg" width="450" />
+<img align="center" src="front-end/public/img/register.jpg" width="470" />
 
-<img align="center" src="front-end/public/img/checkout.jpg" width="450" />
+<img align="left" src="front-end/public/img/products.jpg" width="470" />
 
-<img align="left" src="front-end/public/img/user-order.jpg" width="450" />
+<img align="center" src="front-end/public/img/checkout.jpg" width="470" />
 
-<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="450" />
+<img align="left" src="front-end/public/img/user-order.jpg" width="470" />
 
-<img align="left" src="front-end/public/img/user-order.jpg" width="450" />
+<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="470" />
 
-<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="450" />
+<img align="left" src="front-end/public/img/user-order.jpg" width="470" />
+
+<img align="center" src="front-end/public/img/user-orderdetail.jpg" width="470" />
 
 ## Deploy
 Deploy ainda sendo inplementado.(#deploy)
