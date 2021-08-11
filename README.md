@@ -180,8 +180,17 @@ Na ordem:
   </li>
   
 
-  ## Rotas
-  ### Back-end
+  ## Back-end
+  ### Rotas
+  O arquivo com todas as rotas se encontra na pasta **src/api/routes.js**.
+  #### Login
+  #### Register
+  #### Products
+    ```
+    GET: "http://localhost:3001/products/"
+    ```
+  - Esta rota retorna as url das imagens na pasta **back-end/public**.
+  #### Order   
   
 ## Feedback 
 
