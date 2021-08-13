@@ -219,9 +219,41 @@ Na ordem:
   GET:
   ```
   http://localhost:3001/products/
+
+  Esta rota retorna as urls dos produtos para serem renderizados no front.
   ```
   - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
-  #### Order   
+  #### Order
+  GET:
+  ```
+  http://localhost:3001/order/
+  ```
+  - Esta rota retorna todas as ordens existentes. 
+  POST:
+  ```
+  http://localhost:3001/order/user/
+  ```
+  - Esta rota cria uma ordem de serviço.
+  GET:
+  ```
+  http://localhost:3001/order/user/
+  ```
+  - Esta rota retorna todas as ordens relacionadas ao usuário. 
+  GET:
+  ```
+  http://localhost:3001/order/seller/
+  ```
+  - Esta rota retorna todas as ordens relacionadas ao vendedor.
+  GET:
+  ```
+  http://localhost:3001/order/seller/:orderId
+  ```
+  - Esta rota retorna uma orden de serviço, relacionada ao vendedor, de acordo com o id.
+  GET:
+  ```
+  http://localhost:3001/order/user/:orderId
+  ```
+  - Esta rota retorna uma orden de serviço, relacionada ao usuário, de acordo com o id.
   
 ## Feedback 
 
