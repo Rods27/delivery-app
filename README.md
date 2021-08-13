@@ -44,7 +44,7 @@ Deploy ainda sendo inplementado.
    <li><a href="https://sass-lang.com/">Sass</a></li>
   <li><a href="https://www.mysql.com/">MySQL</a></li>
   <li><a href="https://nodejs.org/en/">Node.js</a></li>
-  li>Sequelize</li>
+  <li>Sequelize</li>
 </ul>
 
 ## Observações
