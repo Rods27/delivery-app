@@ -185,34 +185,34 @@ Na ordem:
   O arquivo com todas as rotas se encontra na pasta ``src/api/routes.js``.
   #### Login
   POST:
-  ```
-  http://localhost:3001/register/
-  ```
   - Esta rota cria o usuário.
-  
-  GET:
   ```
   http://localhost:3001/register/
   ```
-  - Esta rota retorna todos os usuários cadastrados.
   
   GET:
+  - Esta rota retorna todos os usuários cadastrados.
+  ```
+  http://localhost:3001/register/
+  ```
+  
+  GET:
+  - Esta rota retorna um usuário com um determinado id.
   ```
   http://localhost:3001/register/id/:id
   ```
-  - Esta rota retorna um usuário com um determinado id.
   
   GET:
+  - Esta rota retorna todos os usuários com uma determinada role.
   ```
   http://localhost:3001/register/role/:role
   ```
-  - Esta rota retorna todos os usuários com uma determinada role.
   
   DELETE:
+  - Esta rota deleta um usuário com um determinado id.
   ```
   http://localhost:3001/register/id/:id
   ```
-  - Esta rota deleta um usuário com um determinado id.
   
   #### Register
    POST:
@@ -223,49 +223,47 @@ Na ordem:
   
   #### Products
   GET:
+  - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
   ```
   http://localhost:3001/products/
-
-  Esta rota retorna as urls dos produtos para serem renderizados no front.
   ```
-  - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
   
   #### Order
   GET:
+  - Esta rota retorna todas as ordens existentes. 
   ```
   http://localhost:3001/order/
   ```
-  - Esta rota retorna todas as ordens existentes. 
   
   POST:
-  ```
-  http://localhost:3001/order/user/
-  ```
   - Esta rota cria uma ordem de serviço.
-  
-  GET:
   ```
   http://localhost:3001/order/user/
   ```
-  - Esta rota retorna todas as ordens relacionadas ao usuário. 
   
   GET:
+  - Esta rota retorna todas as ordens relacionadas ao usuário. 
+  ```
+  http://localhost:3001/order/user/
+  ```
+  
+  GET:
+  - Esta rota retorna todas as ordens relacionadas ao vendedor.
   ```
   http://localhost:3001/order/seller/
   ```
-  - Esta rota retorna todas as ordens relacionadas ao vendedor.
   
   GET:
+  - Esta rota retorna uma orden de serviço, relacionada ao vendedor, de acordo com o id.
   ```
   http://localhost:3001/order/seller/:orderId
   ```
-  - Esta rota retorna uma orden de serviço, relacionada ao vendedor, de acordo com o id.
   
   GET:
+  - Esta rota retorna uma orden de serviço, relacionada ao usuário, de acordo com o id.
   ```
   http://localhost:3001/order/user/:orderId
   ```
-  - Esta rota retorna uma orden de serviço, relacionada ao usuário, de acordo com o id.
   
 ## Feedback 
 
