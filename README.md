@@ -186,10 +186,35 @@ Na ordem:
   #### Login
   POST:
   ```
-  http://localhost:3001/products/
+  http://localhost:3001/register/
+  ```
+  - Esta rota cria o usuário.
+  GET:
+  ```
+  http://localhost:3001/register/
+  ```
+  - Esta rota retorna todos os usuários cadastrados.
+  GET:
+  ```
+  http://localhost:3001/register/id/:id
+  ```
+  - Esta rota retorna um usuário com um determinado id.
+  GET:
+  ```
+  http://localhost:3001/register/role/:role
+  ```
+  - Esta rota retorna todos os usuários com uma determinada role.
+  DELETE:
+  ```
+  http://localhost:3001/register/id/:id
+  ```
+  - Esta rota deleta um usuário com um determinado id.
+  #### Register
+   POST:
+  ```
+  http://localhost:3001/login/
   ```
   - Esta rota retorna o token contendo o nome, email, e token.
-  #### Register
   #### Products
   GET:
   ```
