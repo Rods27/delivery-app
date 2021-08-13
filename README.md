@@ -39,10 +39,12 @@ Deploy ainda sendo inplementado.
 
 ## Tecnologias
 <ul>
+  <li>Javascript</li>
   <li><a href="https://reactjs.org">React</a></li>
+   <li><a href="https://sass-lang.com/">Sass</a></li>
   <li><a href="https://www.mysql.com/">MySQL</a></li>
   <li><a href="https://nodejs.org/en/">Node.js</a></li>
-  <li><a href="https://sass-lang.com/">Sass</a></li>
+  li>Sequelize</li>
 </ul>
 
 ## Observações
