@@ -22,7 +22,17 @@ Como administrador, pode cadastrar ou deletar usuários.
   * [Ordens do Vendedor](#ordens-do-vendedor--sellerorders)
   * [Ordens detalhadas do Vendedor](#ordens-detalhadas-do-vendedor--sellerordersid)
   * [Administrador](#administrador--adminmanage)
-* [Rotas BackEnd](#rotas)
+* [Rotas BackEnd](#back-end)
+  *[Login](#login)
+  *[](#)
+  *[](#)
+  *[](#)
+  *[](#)
+  *[](#)
+  *[](#)
+  *[](#)
+  *[](#)
+  *[](#)
 * [FeedBack](#feedback)
 
 ## Screenshots
