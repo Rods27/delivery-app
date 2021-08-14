@@ -90,7 +90,7 @@ Na ordem:
 
 ### Front-End
 
-#### Login   ```/login```
+#### Login   ```/login``` (#indice)
   <ul>
     <li>Caso encontre as informações no back-end, o usuário é direcionado a tela de produtos.</li>
     <li>Pode clicar no botão "Ainda não tenho conta", para ir para tela de registros.</li>
