@@ -24,6 +24,7 @@ Como administrador, pode cadastrar ou deletar usuários.
   * [Administrador](#administrador--adminmanage)
 * [Rotas BackEnd](#back-end)
   * [Login](#login)
+  * [Produtos](#produtos)
   * [Register](#registro-de-usuário)
   * [Ordens](#ordens)
 * [FeedBack](#feedback)
@@ -184,6 +185,19 @@ Na ordem:
   ### Rotas
   O arquivo com todas as rotas se encontra na pasta ``src/api/routes.js``.
   #### Login
+   POST:
+  ```
+  http://localhost:3001/login/
+  ```
+  - Esta rota retorna o token contendo o nome, email, e token.
+  
+  #### Products
+  GET:
+  - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
+  ```
+  http://localhost:3001/products/
+  ```
+  #### Registro de Usuário
   POST:
   - Esta rota cria o usuário.
   ```
@@ -212,20 +226,6 @@ Na ordem:
   - Esta rota deleta um usuário com um determinado id.
   ```
   http://localhost:3001/register/id/:id
-  ```
-  
-  #### Registro de Usuário
-   POST:
-  ```
-  http://localhost:3001/login/
-  ```
-  - Esta rota retorna o token contendo o nome, email, e token.
-  
-  #### Products
-  GET:
-  - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
-  ```
-  http://localhost:3001/products/
   ```
   
   #### Ordens
