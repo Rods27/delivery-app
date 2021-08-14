@@ -24,15 +24,8 @@ Como administrador, pode cadastrar ou deletar usuários.
   * [Administrador](#administrador--adminmanage)
 * [Rotas BackEnd](#back-end)
   * [Login](#login)
-  * [Register](#register)
-  * [](#)
-  * [](#)
-  * [](#)
-  * [](#)
-  * [](#)
-  * [](#)
-  * [](#)
-  * [](#)
+  * [Register](#registro-de-usuário)
+  * [Ordens](#ordens)
 * [FeedBack](#feedback)
 
 ## Screenshots
@@ -235,7 +228,7 @@ Na ordem:
   http://localhost:3001/products/
   ```
   
-  #### Order
+  #### Ordens
   GET:
   - Esta rota retorna todas as ordens existentes. 
   ```
