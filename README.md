@@ -13,6 +13,8 @@ Como administrador, pode cadastrar ou deletar usuários.
 * [Configuração](#configuração)
 * [Iniciando](#iniciando)
 * [Funcionalidades](#funcionalidades)
+* [Rotas FrontEnd](#rotas)
+* [Registro de Usuário](#registro-de-usuário---register)
 * [Rotas BackEnd](#rotas)
 * [FeedBack](#feedback)
 
