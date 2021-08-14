@@ -96,7 +96,6 @@ class Login extends React.Component {
   render() {
     const { email, password } = this.state;
     const { history } = this.props;
-
     return (
       <div className="login-container">
         <div className="input-div">

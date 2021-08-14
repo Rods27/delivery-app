@@ -183,7 +183,7 @@ class SellerOrdersDetailsList extends React.Component {
           type="button"
           onClick={ () => history.push('/seller/orders') }
         >
-          Back
+          Voltar
         </button>
       </div>
     );

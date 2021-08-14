@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import checkUser from '../../services/checkUser';
 import { Header, Loader, CardList } from '../../components';
 
 class Products extends React.Component {
@@ -10,7 +11,6 @@ class Products extends React.Component {
   }
 
   async componentDidMount() {
-    // verificar se o usuario está autenticado
     const Loading = 1000;
     setTimeout(() => {
       this.setState({ loading: false });
@@ -21,7 +21,7 @@ class Products extends React.Component {
   render() {
     const { history } = this.props;
     const { loading } = this.state;
-    // localStorage.setItem('user', JSON.stringify(stateUser));
+    checkUser(history);
     return (
       <div className="products-container">
         <Header history={ history } />
@@ -39,13 +39,8 @@ class Products extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
-//   stateUser: state.userReducer.user,
-// });
-
 Products.propTypes = {
   history: PropTypes.shape().isRequired,
-  // stateUser: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 export default connect(null, null)(Products);

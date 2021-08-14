@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from '../../Loader';
 import { getAllOrdersByUserApi } from '../../../redux/actions';
+import OrderListInfos from './OrderListInfos';
 
 const testId = 'customer_orders__';
 
@@ -66,26 +67,7 @@ class CustomerOrdersList extends React.Component {
                   </button>
                 </div>
                 <div className="order-right">
-                  <div className="status-container">
-                    <div
-                      id={ order.status }
-                      data-testid={ `${testId}element-delivery-status-${order.order_id}` }
-                    >
-                      { order.status }
-                    </div>
-                    <div>
-                      <h4
-                        data-testid={ `${testId}element-order-date-${order.order_id}` }
-                      >
-                        { order.sale_date }
-                      </h4>
-                      <h4
-                        data-testid={ `${testId}element-card-price-${order.order_id}` }
-                      >
-                        { `R$ ${order.total_price}` }
-                      </h4>
-                    </div>
-                  </div>
+                  <OrderListInfos order={ order } />
                 </div>
               </div>
             </button>

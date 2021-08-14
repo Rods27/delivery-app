@@ -169,7 +169,7 @@ class CustomerOrdersDetailsList extends React.Component {
           className="cust-orders_details-back bottom_info"
           onClick={ () => history.push('/customer/orders') }
         >
-          Back
+          Voltar
         </button>
       </div>
     );

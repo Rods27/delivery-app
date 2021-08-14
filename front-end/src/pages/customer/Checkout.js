@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Header, Loader, CheckoutCart, CheckoutAdress } from '../../components';
+import checkUser from '../../services/checkUser';
 
 class Checkout extends React.Component {
   constructor() {
@@ -20,6 +21,7 @@ class Checkout extends React.Component {
   render() {
     const { history } = this.props;
     const { loading } = this.state;
+    checkUser(history);
     return (
       <div className="checkout-container">
         <Header history={ history } />

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Header, Loader, CustomerOrdersDetailsList } from '../../components';
+import checkUser from '../../services/checkUser';
 
 class CustomerOrdersDetails extends React.Component {
   constructor() {
@@ -19,6 +20,7 @@ class CustomerOrdersDetails extends React.Component {
   render() {
     const { history } = this.props;
     const { loading } = this.state;
+    checkUser(history);
     return (
       <div className="cust-orders_details-mastercontainer">
         <Header history={ history } />

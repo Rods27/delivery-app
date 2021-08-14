@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const URL_BASE = 'http://localhost:3001';
+// const URL_BASE = 'http://rods27-deliveryapp-backend.herokuapp.com/';
 
 export async function getAllUsers() {
   const accessToken = JSON.parse(localStorage.getItem('user'));

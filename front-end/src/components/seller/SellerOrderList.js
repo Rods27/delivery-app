@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Loader from '../Loader';
+import OrderListInfos from './OrderListInfos';
 import { getAllOrdersBySellerApi } from '../../redux/actions';
 
 const testId = 'seller_orders__element';
@@ -62,26 +63,7 @@ class SellerOrderList extends React.Component {
                 </span>
               </div>
               <div className="order-right">
-                <div className="status-container">
-                  <div
-                    id={ order.status }
-                    data-testid={ `${testId}-delivery-status-${order.id}` }
-                  >
-                    { order.status }
-                  </div>
-                  <div>
-                    <h4
-                      data-testid={ `${testId}-order-date-${order.id}` }
-                    >
-                      {order.date}
-                    </h4>
-                    <h4
-                      data-testid={ `${testId}-card-price-${order.id}` }
-                    >
-                      { `R$ ${order.total_price.replace('.', ',')}` }
-                    </h4>
-                  </div>
-                </div>
+                <OrderListInfos order={ order } />
                 <span>
                   {`${order.delivery_address}, ${order.delivery_number}`}
                 </span>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllUsers } from '../../services';
+import checkUser from '../../services/checkUser';
 import { AdminUsers, AdminSignIn, AdmSellerHeader, Loader } from '../../components';
 import { allUsersAction } from '../../redux/actions';
 
@@ -24,7 +25,7 @@ class Admin extends React.Component {
     }, Loading);
   }
 
-  componentDidUpdate() { // nao excluir
+  componentDidUpdate() {
     const { state } = this;
     console.log(state.user);
   }
@@ -32,6 +33,7 @@ class Admin extends React.Component {
   render() {
     const { loading } = this.state;
     const { history } = this.props;
+    checkUser(history);
     return (
       <div className="admin-container">
         <AdmSellerHeader history={ history } />

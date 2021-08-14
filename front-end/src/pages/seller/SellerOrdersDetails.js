@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import checkUser from '../../services/checkUser';
 import { AdmSellerHeader, Loader, SellerOrdersDetailsList } from '../../components';
 
 class SellerOrdersDetails extends React.Component {
@@ -19,6 +20,7 @@ class SellerOrdersDetails extends React.Component {
   render() {
     const { history } = this.props;
     const { loading } = this.state;
+    checkUser(history);
     return (
       <div className="seller-orders_details-mastercontainer">
         <AdmSellerHeader history={ history } />
