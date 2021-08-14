@@ -23,16 +23,16 @@ Como administrador, pode cadastrar ou deletar usuários.
   * [Ordens detalhadas do Vendedor](#ordens-detalhadas-do-vendedor--sellerordersid)
   * [Administrador](#administrador--adminmanage)
 * [Rotas BackEnd](#back-end)
-  *[Login](#login)
-  *[](#)
-  *[](#)
-  *[](#)
-  *[](#)
-  *[](#)
-  *[](#)
-  *[](#)
-  *[](#)
-  *[](#)
+  * [Login](#login)
+  * [Register](#register)
+  * [](#)
+  * [](#)
+  * [](#)
+  * [](#)
+  * [](#)
+  * [](#)
+  * [](#)
+  * [](#)
 * [FeedBack](#feedback)
 
 ## Screenshots
@@ -221,7 +221,7 @@ Na ordem:
   http://localhost:3001/register/id/:id
   ```
   
-  #### Register
+  #### Registro de Usuário
    POST:
   ```
   http://localhost:3001/login/
