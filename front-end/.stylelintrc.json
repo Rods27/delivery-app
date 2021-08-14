@@ -1,8 +1,6 @@
 {
   "plugins": ["stylelint-order"],
   "rules": {
-    "no-console": "off",
-    "no-alert": "off",
     "at-rule-empty-line-before": "always",
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
