@@ -191,7 +191,7 @@ Na ordem:
   ```
   - Esta rota retorna o token contendo o nome, email, e token.
   
-  #### Products
+  #### Produtos
   GET:
   - Esta rota retorna as url's das imagens na pasta ``back-end/public``.
   ```
