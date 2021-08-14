@@ -46,7 +46,6 @@ const deleteByIdRegister = rescue(async (req, res, next) => {
 
 const getNameByIdRegister = rescue(async (req, res, next) => {
   const { id } = req.params;
-  // console.log(id);
   const result = await registerServices.getNameById(id);
   if (result.error) return next(result);
   res.status(success.OK).json({ register: result });

@@ -13,6 +13,7 @@ const orderRoute = express.Router();
 loginRoute.post('/', loginController.login);
 registerRoute.post('/', registerController.createRegister);
 registerRoute.use(verifyAuth);
+
 registerRoute.get('/', registerController.getAllRegisters);
 registerRoute.get('/role/:role', registerController.getByRole);
 registerRoute.get('/:id', registerController.getByIdRegister);

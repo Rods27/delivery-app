@@ -81,7 +81,6 @@ const getNameById = async (id) => {
   
   try {
     const { dataValues: { password: _, ...result } } = await user.findByPk(id);
-    // console.log(user);
     return result.name;
   } catch (err) {
     return clientError.badRequest(`Not Found Id: ${id}`);
