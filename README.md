@@ -89,8 +89,8 @@ Na ordem:
 ## Funcionalidades
 
 ### Front-End
-Indice(#indice)
-#### Login   ```/login``` 
+
+#### [Login](#indice)   ```/login``` 
   <ul>
     <li>Caso encontre as informações no back-end, o usuário é direcionado a tela de produtos.</li>
     <li>Pode clicar no botão "Ainda não tenho conta", para ir para tela de registros.</li>
