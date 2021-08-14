@@ -13,7 +13,6 @@ Como administrador, pode cadastrar ou deletar usuários.
 * [Configuração](#configuração)
 * [Iniciando](#iniciando)
 * [Funcionalidades](#funcionalidades)
-* [Rotas FrontEnd](#rotas)
   * [Login](#login---login)
   * [Registro de Usuário](#registro-de-usuário---register)
   * [Produtos](#produtos---customerproducts)
@@ -87,9 +86,8 @@ Na ordem:
 - Na pasta front-end, abra o terminal e digite ```npm start``` em seu terminal, para iniciar a servidor na porta 3000.
 
 ## Funcionalidades
-
-### Front-End
 [Voltar ao Indice](#indice)
+### Front-End
 #### Login   ```/login``` 
   <ul>
     <li>Caso encontre as informações no back-end, o usuário é direcionado a tela de produtos.</li>
