@@ -80,7 +80,7 @@ Na ordem:
 
 ### Front-End
 
-#### Login  ```/login```
+#### Login   ```/login```
   <ul>
     <li>Caso encontre as informações no back-end, o usuário é direcionado a tela de produtos.</li>
     <li>Pode clicar no botão "Ainda não tenho conta", para ir para tela de registros.</li>
@@ -93,7 +93,7 @@ Na ordem:
     <li>Faz um crivo no front-end de acordo com o padrão de email e tamanho de senha maior que 5,</li>
   </ul><br>
   
- #### Register  ```/register```
+ #### Registro de Usuário   ```/register```
   <ul>
     <li>Faz registro de usuários novos, se a criação for bem sucedida, será direcionado para a tela de produtos.</li>
     <li>Caso haja algum erro pelo back-end, o erro é exibido abaixo do input senha.</li>
@@ -105,7 +105,7 @@ Na ordem:
     </ul>
   </ul><br>
 
- #### Produtos  ```/customer/products```
+ #### Produtos   ```/customer/products```
   <li>Mostra todas as bebidas disponíveis</li>  
   <li>Podem ser selecionados um por um, ou adicionados em quantidades específicas pelo input do card.</li> 
   <li>São recomendados comidas ser o usuário está na tela de bebidas, vice-versa.</li>
@@ -116,26 +116,24 @@ Na ordem:
     <li>Nome do usuário: te direciona para a tela de produtos.</li>
     <li>Sair: Te direciona para a tela de Login e limpa o localStorage.</li>
     <li>Caso clique no Botão "Ver Carrinho", será direcionado a tela de Checkout.</li>
-   </ul>
+   </ul><br>
   
- #### Checkout  ```/customer/checkout```
-  <li>
-    <ul>
-      <li>Mostra todo o seu carrinho de compras.</li>
-      <li>Esta tela só é acessivel pelo usuário e mostra o header do usuário.</li>
-      <li>Você pode remover os itens do carrinho,escolher o vendedor, e o  endereço de entrega.</li>  
-      <li>Após clicar em finalizar pedido, o usuário será direcionado para a Tela de UserOrders</li>  
-    </ul><br>
-  </li>
+ #### Checkout   ```/customer/checkout```
+  <ul>
+    <li>Mostra todo o seu carrinho de compras.</li>
+    <li>Esta tela só é acessivel pelo usuário e mostra o header do usuário.</li>
+    <li>Você pode remover os itens do carrinho,escolher o vendedor, e o  endereço de entrega.</li>  
+    <li>Após clicar em finalizar pedido, o usuário será direcionado para a Tela de UserOrders</li>  
+  </ul><br>
   
-  #### Ordens do Usuário  ```/customer/orders```
+  #### Ordens do Usuário    ```/customer/orders```
   <ul>
     <li>Tela onde mostram as ordens ligadas ao usuário.</li>
     <li>Esta tela só é acessivel pelo usuário e mostra o header do usuário.</li>
     <li>Caso clique em uma ordem, será direcionado para a tela de detalhe da ordem.</li>
   </ul><br>
   
-  #### Ordens Detalhadas do Usuário  ```/customer/orders/:id```
+  #### Ordens Detalhadas do Usuário    ```/customer/orders/:id```
   <ul>
     <li>Tela onde mostra o detalhe da ordem onde foi clicada.</li>
     <li>Esta tela só é acessivel pelo usuário e mostra o header do usuário.</li>
@@ -143,37 +141,31 @@ Na ordem:
   </ul><br>
   
   #### Ordens do Vendedor  ```/seller/orders```
-  <li>Seller Order
-    <ul>
-      <li>Tela onde mostram as ordens ligadas ao vendedor.</li>
-      <li>Esta tela só é acessivel pelo vendedor e mostra o header do vendedor.</li>
-      <li>Caso clique em uma ordem, será direcionado para a tela de detalhe da ordem.</li>
-    </ul><br>
-  </li>
+  <ul>
+    <li>Tela onde mostram as ordens ligadas ao vendedor.</li>
+    <li>Esta tela só é acessivel pelo vendedor e mostra o header do vendedor.</li>
+    <li>Caso clique em uma ordem, será direcionado para a tela de detalhe da ordem.</li>
+  </ul><br>
 
   #### Ordens Detalhadas do Vendedor  ```/seller/orders/:id```
-  <li>Seller Order Details
-    <ul>
-      <li>Tela onde mostra o detalhe da ordem onde foi clicada.</li>
-      <li>Esta tela só é acessivel pelo vendedor e mostra o header do vendedor.</li>
-      <li>Nesta tela, caso esteja como Status Pendente, todos os botões serão habilitados.</li>
-      <li>Caso esteja como Status Preparando, apenas o botão "Saiu para Entrega" será habilitado.</li>
-      <li>Caso esteja como Status Entregue, nenhum botão será habilitado.</li>
-    </ul><br>
-  </li>
-
-  #### Administrador  ```/admin/manage```
   <ul>
-    <li>Tela onde mostra todos os usuários que não são admins.</li>
-    <li>Pode se cadastrar qualquer tipo de usuário nesta tela.</li>
-    <li>Caso o email desejado esteja cadastrado, aparecerá um erro abaixo dos inputs.</li>
-    <li>O admin poderá excluir qualquer usuário.</li>
-    O botão cadastro será desabilitado se:
-    <ul>
-      <li>O nome for menor que 1 caracter.</li>
-      <li>Email não estiver no formato de email.</li>
-      <li>Senha maior for menor que 6</li>
-    </ul>
+    <li>Tela onde mostra o detalhe da ordem onde foi clicada.</li>
+    <li>Esta tela só é acessivel pelo vendedor e mostra o header do vendedor.</li>
+    <li>Nesta tela, caso esteja como Status Pendente, todos os botões serão habilitados.</li>
+    <li>Caso esteja como Status Preparando, apenas o botão "Saiu para Entrega" será habilitado.</li>
+    <li>Caso esteja como Status Entregue, nenhum botão será habilitado.</li>
+  </ul><br>
+  
+  #### Administrador  ```/admin/manage```
+  <li>Tela onde mostra todos os usuários que não são admins.</li>
+  <li>Pode se cadastrar qualquer tipo de usuário nesta tela.</li>
+  <li>Caso o email desejado esteja cadastrado, aparecerá um erro abaixo dos inputs.</li>
+  <li>O admin poderá excluir qualquer usuário.</li>
+  O botão cadastro será desabilitado se:
+  <ul>
+    <li>O nome for menor que 1 caracter.</li>
+    <li>Email não estiver no formato de email.</li>
+    <li>Senha maior for menor que 6</li>
   </ul><br>
   
   ## Back-end
