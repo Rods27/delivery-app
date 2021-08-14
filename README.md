@@ -89,8 +89,8 @@ Na ordem:
 ## Funcionalidades
 
 ### Front-End
-
-#### [Login](#indice)   ```/login``` 
+[Voltar ao Indice](#indice)
+#### Login   ```/login``` 
   <ul>
     <li>Caso encontre as informações no back-end, o usuário é direcionado a tela de produtos.</li>
     <li>Pode clicar no botão "Ainda não tenho conta", para ir para tela de registros.</li>
@@ -179,6 +179,7 @@ Na ordem:
   </ul><br>
   
   ## Back-end
+  [Voltar ao Indice](#indice)
   ### Rotas
   O arquivo com todas as rotas se encontra na pasta ``src/api/routes.js``.
   #### Login
