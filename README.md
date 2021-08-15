@@ -80,13 +80,13 @@ Faça o comando tanto na pasta raiz, quanto nas pastas **back-end** e **front-en
 - Para a aplicação funcionar, você vai precisar de um arquivo .env, para informar para a aplicação quais variaveis usar na criação do banco.
 - Este arquivo ficará parecido como: 
 ```
-  NODE_ENV=development
-  API_PORT=3001
-  MYSQL_DB_NAME=delivery-app
-  MYSQL_HOST=localhost
-  MYSQL_PORT=3306
-  MYSQL_USER=root
-  MYSQL_PASSWORD=
+NODE_ENV=development
+API_PORT=3001
+MYSQL_DB_NAME=delivery-app
+MYSQL_HOST=localhost
+MYSQL_PORT=3306
+MYSQL_USER=root
+MYSQL_PASSWORD=
 ```
 - Para criar e popular o database, pode usar o seguinte comando dentro da pasta **back-end**:
 ```
